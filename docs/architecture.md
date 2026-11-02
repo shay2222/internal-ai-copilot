@@ -8,24 +8,27 @@ Turn free-text tickets into structured data (category, urgency, summary, next ac
 
 ## 3. High-Level Design
 - Input: raw ticket text
-- Processing: rule-based + LLM-ready extraction layer
-- Validation: schema checks
-- Output: structured JSON + recommended action
+- Processing: rule-based extraction layer (designed so an LLM structured-extraction layer can replace it later)
+- Validation: schema checks for category, urgency, summary, and recommended action
+- Output: structured JSON + recommended next action
 - Evaluation: accuracy against labeled examples
 
 ## 4. Components
-- Extraction function
-- Validation layer
+- Extraction function (`simple_extract`)
+- Validation layer (`validate_output`)
 - Simple evaluation harness
-- Interface for internal users
+- Function-based interface (`run_copilot`)
 
-## 5. Production Considerations
-- Schema validation and retries
-- Logging of every prediction
-- Clear failure modes
-- Cost and latency tracking
-- How this would be deployed behind an API
+## 5. Current Results (from demo run)
+- Validation: Passed (`Valid: True`)
+- Category accuracy: 3/3
+- Urgency accuracy: 3/3
 
-## 6. Limitations of this demo
-- Currently uses a simple rule-based extractor for full reproducibility on free tools
-- Designed so a real LLM structured-extraction layer can replace the rules later
+Example output:
+```json
+{
+  "category": "billing",
+  "urgency": "high",
+  "summary": "Hi, I was charged twice for my subscription this month...",
+  "recommended_next_action": "Review billing records and respond within 4 hours"
+}
