@@ -1,1 +1,6 @@
-
+ticket_id,raw_text,expected_category,expected_urgency
+1,"Hi, I was charged twice for my subscription this month. Can someone help me get a refund?",billing,high
+2,"The dashboard is loading very slowly since yesterday. Is there an outage?",bug,high
+3,"I would love a dark mode option in the mobile app.",feature_request,low
+4,"My invoice still shows the old address even though I updated it last week.",billing,medium
+5,"I can't log in. It says my password is wrong but I'm sure it's correct.",bug,high
