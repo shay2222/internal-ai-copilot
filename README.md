@@ -30,13 +30,10 @@ internal-ai-copilot/
 ├── README.md
 ├── PROJECT_GOAL.md
 ├── requirements.txt
-├── docs/
-│   └── architecture.md
-├── data/
-│   └── sample_tickets.csv
-├── evaluation/
-│   ├── test_questions.csv
-│   └── results.md
+├── docs/ architecture.md
+├── data/sample_tickets.csv
+├── evaluation/test_questions.csv
+├── evaluation/results.md
 └── src/
 
 
